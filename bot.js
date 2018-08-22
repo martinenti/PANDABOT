@@ -106,20 +106,15 @@ message.author.send(`**مدة الرابط : يـوم
 });
 
 
-client.on('guildCreate', guild => {
-client.channels.get("481533146026868768").send( ${client.user.tag} دخل سيرفر جديد
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**)
+  client.on('message',async message => {
+if(message.content === '+unbanall') {
+message.guild.fetchBans().then(ba => {
+ba.forEach(ns => {
+message.guild.unban(ns);
 });
-client.on('guildDelete', guild => {
-  client.channels.get("481533146026868768").send( ${client.user.tag} طلع من سيرفر
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**)
-})
+});
+}
+});
 
 
 
