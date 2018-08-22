@@ -105,7 +105,7 @@ var mentionned = message.mentions.members.first();
 .setFooter(message.author.username, message.author.avatarURL)  
     message.channel.sendEmbed(id);
 })
-}
+});
     
 
          
